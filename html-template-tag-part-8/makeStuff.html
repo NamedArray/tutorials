@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+    <template id="sample">
+        <div>
+            <h1 class="title"></h1>
+            <p class="desc"></p>
+            <small class="category"></small>
+            <div><strong class="date"></strong> - <span class="topic"></span></div>
+        </div>
+    </template>
+
+
+    <script>
+        var temp1 = document.getElementById('sample').content
+        var copyHTML = document.importNode(temp1, true);
+        //document.getElementById("app").appendChild(copyHTML);
+
+
+        copyHTML.querySelector(".title").textContent = "Title McGillyCutty"
+        copyHTML.querySelector(".desc").textContent = "Descriptive Description"
+        copyHTML.querySelector(".date").textContent = "1/23/2051"
+        copyHTML.querySelector(".category").textContent = "Domestic Short Hair"
+        copyHTML.querySelector(".topic").textContent = "JavaScript"
+        document.getElementById("app").appendChild(copyHTML);
+
+    </script>
+
+
+</body>
+
+</html>
